@@ -22,3 +22,18 @@ class PhonebookTest(unittest.TestCase):
     def test_empty_phonebook_is_consistent(self):
         is_consistent = self.phonebook.is_consistent()
         self.assertTrue(is_consistent)
+    
+    @unittest.skip("Working")
+    def test_is_consistent(self):
+        self.phonebook.add("Bob", "12345")
+        self.assertTrue(self.phonebook.is_consistent())
+        
+        self.phonebook.add("Anna", "012345")
+        self.assertTrue(self.phonebook.is_consistent())
+        
+        self.phonebook.add("Sue", "12345") # identical to Bob
+        self.assertFalse(self.phonebook.is_consistent())
+        
+        self.phonebook.add("Sue", "123") # prefix of Bob
+        self.assertFalse(self.phonebook.is_consistent())
+        
