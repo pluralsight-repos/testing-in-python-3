@@ -1,6 +1,3 @@
-from sqlalchemy import false
-
-
 class Phonebook:
 
     def __init__(self):
