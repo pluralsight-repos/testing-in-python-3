@@ -2,3 +2,7 @@
 https://www.pluralsight.com/courses/python-3-testing
 
 branch: unittest
+
+branch: pytest
+
+command to run: PYTHONPATH=src python -m pytest
