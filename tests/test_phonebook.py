@@ -9,4 +9,5 @@ def test_lookup_by_name():
 def test_contains_all_names():
     phonebook = Phonebook()
     phonebook.add("Bob", "12345")
-    assert phonebook.all_names() == {"Bob", "missing"}
+    assert "Missing" in phonebook.all_names()
+    assert phonebook.all_names() == {"Bob", "Missing"}

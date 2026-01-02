@@ -10,7 +10,7 @@ class Phonebook:
         return self.numbers[name]
     
     def all_names(self):
-        pass
+        return set(self.numbers.keys())
     
     # def is_consistent(self):
     #     for name1, number1 in self.numbers.items():
