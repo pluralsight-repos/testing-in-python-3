@@ -6,3 +6,5 @@ branch: unittest
 branch: pytest
 
 command to run: PYTHONPATH=src python -m pytest
+command to run: PYTHONPATH=src python -m pytest -v
+command to run: PYTHONPATH=src python -m pytest --fixtures

@@ -1,7 +1,12 @@
+import os
+from pathlib import Path
+
 class Phonebook:
 
-    def __init__(self):
+    def __init__(self, temp_dir):
         self.numbers = {}
+        self.filename = Path(temp_dir) / "phonebook.txt"
+        self.cache = open(self.filename, "w")
         
     def add(self, name, number):
         self.numbers[name] = number        
@@ -11,6 +16,10 @@ class Phonebook:
     
     def all_names(self):
         return set(self.numbers.keys())
+    
+    def clear(self):
+        self.cache.close()
+        os.remove(self.filename)    
     
     # def is_consistent(self):
     #     for name1, number1 in self.numbers.items():

@@ -2,9 +2,11 @@ import pytest
 from phonebook import Phonebook
 
 @pytest.fixture
-def phonebook():
-    phonebook = Phonebook()
-    return phonebook
+def phonebook(tmpdir):
+    "Provide an empty Phonebbok"
+    phonebook = Phonebook(tmpdir)
+    yield phonebook
+    phonebook.clear()
 
 def test_lookup_by_name(phonebook):
     # phonebook = Phonebook()
