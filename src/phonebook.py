@@ -9,6 +9,9 @@ class Phonebook:
     def lookup(self, name):
         return self.numbers[name]
     
+    def all_names(self):
+        pass
+    
     # def is_consistent(self):
     #     for name1, number1 in self.numbers.items():
     #         for name2, number2 in self.numbers.items():
