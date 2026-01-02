@@ -25,21 +25,6 @@ def test_missing_name(phonebook):
     with pytest.raises(KeyError):
         phonebook.lookup("Bob")
 
-def test_is_consistent_with_different_method(phonebook):
-    phonebook.add("Bob","12345")
-    phonebook.add("Anna","01234")
-    assert phonebook.is_consistent()
-    
-def test_inconsistent_with_duplicate_method(phonebook):
-    phonebook.add("Bob","12345")
-    phonebook.add("Sue","12345")
-    assert not phonebook.is_consistent()
-    
-def test_inconsistent_with_duplicate_prefix(phonebook):
-    phonebook.add("Bob","12345")
-    phonebook.add("Sue","123")
-    assert not phonebook.is_consistent()
-
 @pytest.mark.parametrize(
     "entry1,entry2,is_consistent", [
         (("Bob","12345"),("Anna","01234"), True),
