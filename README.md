@@ -6,7 +6,3 @@ branch: unittest
 branch: pytest
 
 command to run: PYTHONPATH=src python -m pytest
-
-
-tests in de first day of 2026
-
